@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html>
+<head>
+    <style>
+        body {
+            background-color:darkcyan;
+        }
+        h1 {
+            color :aliceblue;
+            text-align: center;
+            height: 10px;
+            margin: 2px;
+        }
+        #bordering {
+            border: 5px solid transparent;
+            padding: 10px;
+            border-image: fill blue stretch;
+        }
+        /* .color_text{
+            text-align: center;
+            height: 50px;
+            padding-top: 400px;
+            background-color: white;
+        } */
+        .container{
+            text-align: center;
+            height: 30px;
+            border:solid rgb(42, 71, 167);
+            padding-top: 10px;
+        }
+        #btn {
+            font-size: 10 px;
+        }
+    </style>
+</head>
+<body>
+    <title>Color Flipper</title>
+    <div class = "container">
+        <button id = "btn" type="button" onclick="myFunction()" style="color:rgb(42, 71, 167)" >
+            Click Me! To change colors.
+        </button>
+    </div>
+    <!-- <div class = "color_text">
+        <p>Color is: <span id="name">Red</span></p>
+    </div> -->
+    <h1>First Project on HTML ever</h1>
+    <h3 style = "padding: 100px;">Its pretty boring ig.</h3>
+    <script>
+        // let count = 1;
+        // function myFunction(){
+        //     count++;
+        //     if(count%2 == 0){
+        //         document.body.style.background = "aqua";
+        //     }
+        //     else document.body.style.background = "darkcyan";
+        // }
+        let colors = ["violet", "blue", "green", "yellow", "black", "red", "orange", "pink", "darkcyan", "aqua"];
+        //let colors_name = ["violet", "blue", "green", "yellow", "black", "red", "orange", "pink", "darkcyan", "aqua"];
+        let last = "darkcyan";
+        function myFunction(){
+            let a = Math.floor(Math.random() * 1000);
+            a %= 10;
+            if(colors[a] == last){
+                document.body.style.background = colors[a];
+                last = colors[a];
+                //document.getElementById("name").innerHTML = colors_name[a];
+            }
+            else myFunction();
+        }
+    </script>
+</body>
+</html>
